@@ -40,3 +40,34 @@ npm run build
 ```
 yarn build
 ```
+
+## Типы данных
+
+IProduct
+Поля:
+- `id:string;`
+- `description:string;`
+- name:string;
+- category:string;
+- price:number|null;
+- image:string;
+
+IPage
+Поля:
+- basket:number;
+- catalog:HTMLElement[];
+
+IPaymentForm
+Поля:
+- `payment: string;`
+- address: string;
+
+IContactForm
+Поля:
+- email: string;
+- phone: string;
+
+IOrder extends IPaymentForm,IContactForm
+Поля:
+- total: number;
+- items: string[];
