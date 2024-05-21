@@ -1,4 +1,5 @@
-interface IProduct{
+//интерфейс карточки товара
+export interface IProduct{
  id:string;
  description:string;
  name:string;
@@ -7,36 +8,54 @@ interface IProduct{
  image:string;
 }
 
-interface IPage{
+// интерфейс страницы
+export interface IPage{
   basket:number;
   catalog:HTMLElement[];
 }
 
-interface IPaymentForm{
+//интерфейс формы доставки 
+export interface IPaymentForm{
   payment: string;
   address: string;
 }
 
-interface IContactForm{
+//интерфейс формы контактов покупателя
+export interface IContactForm{
   email: string;
   phone: string;
 }
 
-interface IOrder extends IPaymentForm,IContactForm{
+// интерфейс глобального состояния приложения
+export interface IAppState {
+  catalog: IProduct[];
+  preview: string | null;
+  basket: IProduct[];
+  order: IOrder | null;
+}
+
+//интерфейс заказа
+export interface IOrder extends IPaymentForm,IContactForm{
   total: number;
   items: string[];
 }
 
-interface ISuccessfulPurchase{
+//интерфейс удачной покупки 
+export interface ISuccessfulPurchase{
   id:string;
   total:number;
 }
 
-interface IBasket{
+// интерфейс модального окна
+export interface IModalUI {
+  content: HTMLElement;
+}
+
+// интерфейс корзины
+export interface IBasket{
   items: HTMLElement[];
   total: number;
 }
 
-interface IValidOrder extends IOrder{
-  errormessage:string[];
-}
+
+
