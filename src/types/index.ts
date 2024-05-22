@@ -10,7 +10,7 @@ export interface IProduct{
 
 // интерфейс страницы
 export interface IPage{
-  basket:number;
+  counter:number;
   catalog:HTMLElement[];
 }
 
@@ -36,8 +36,7 @@ export interface IAppState {
 
 //интерфейс заказа
 export interface IOrder extends IPaymentForm,IContactForm{
-  total: number;
-  items: string[];
+  items: IProduct[];
 }
 
 //интерфейс удачной покупки 
